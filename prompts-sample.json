@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "categories": [
+    { "id": "cat-uncategorized", "name": "未分类", "color": "#6b7280", "sortOrder": 0 },
+    { "id": "cat-claude", "name": "Claude 命令", "color": "#8b5cf6", "sortOrder": 1 },
+    { "id": "cat-review", "name": "代码审查", "color": "#ef4444", "sortOrder": 2 },
+    { "id": "cat-arch", "name": "架构设计", "color": "#3b82f6", "sortOrder": 3 },
+    { "id": "cat-debug", "name": "调试修复", "color": "#f97316", "sortOrder": 4 },
+    { "id": "cat-perf", "name": "性能优化", "color": "#22c55e", "sortOrder": 5 },
+    { "id": "cat-test", "name": "测试", "color": "#06b6d4", "sortOrder": 6 },
+    { "id": "cat-learn", "name": "学习教程", "color": "#eab308", "sortOrder": 7 },
+    { "id": "cat-db", "name": "数据库", "color": "#3b82f6", "sortOrder": 8 },
+    { "id": "cat-git", "name": "Git 操作", "color": "#f97316", "sortOrder": 9 },
+    { "id": "cat-docs", "name": "文档撰写", "color": "#ec4899", "sortOrder": 10 },
+    { "id": "cat-frontend", "name": "前端开发", "color": "#06b6d4", "sortOrder": 11 },
+    { "id": "cat-backend", "name": "后端开发", "color": "#22c55e", "sortOrder": 12 },
+    { "id": "cat-refactor", "name": "代码重构", "color": "#eab308", "sortOrder": 13 }
+  ],
+  "prompts": [
+    {
+      "id": "pm-compact", "title": "紧凑模式", "content": "/compact",
+      "categoryId": "cat-claude", "tags": ["命令"], "color": "#8b5cf6",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 0
+    },
+    {
+      "id": "pm-clear", "title": "清空对话", "content": "/clear",
+      "categoryId": "cat-claude", "tags": ["命令"], "color": "#8b5cf6",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 1
+    },
+    {
+      "id": "pm-vuln-audit", "title": "安全漏洞审查", "content": "Review the following code for security vulnerabilities. Check for:\n- SQL/NoSQL injection\n- XSS (Cross-Site Scripting)\n- CSRF\n- Authentication/authorization flaws\n- Insecure direct object references\n- Sensitive data exposure\n\n```\n[在此粘贴代码]\n```",
+      "categoryId": "cat-review", "tags": ["安全", "审查", "漏洞"], "color": "#ef4444",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 2
+    },
+    {
+      "id": "pm-code-review", "title": "代码审查", "content": "Please review the following code changes. Evaluate:\n- Code quality and readability\n- Potential bugs or edge cases\n- Performance implications\n- Adherence to best practices\n\n```diff\n[在此粘贴 diff 或代码]\n```",
+      "categoryId": "cat-review", "tags": ["审查", "代码质量"], "color": "#ef4444",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 3
+    },
+    {
+      "id": "pm-logic-review", "title": "逻辑审查", "content": "Review this code for logic errors and incorrect assumptions. Pay special attention to:\n- Off-by-one errors\n- Race conditions\n- Incorrect error handling\n- Edge cases\n\n```\n[在此粘贴代码]\n```",
+      "categoryId": "cat-review", "tags": ["审查", "逻辑"], "color": "#f97316",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 4
+    },
+    {
+      "id": "pm-arch-review", "title": "架构审查", "content": "Analyze the architectural design of this codebase. Evaluate:\n- Separation of concerns\n- Coupling and cohesion\n- Adherence to SOLID principles\n- Dependency management\n- Scalability of the design\n\n```\n[在此粘贴项目结构或代码]\n```",
+      "categoryId": "cat-arch", "tags": ["架构", "审查"], "color": "#3b82f6",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 5
+    },
+    {
+      "id": "pm-sys-design", "title": "系统设计", "content": "Design a system architecture for the following requirements. Include:\n- System components and their responsibilities\n- Data flow and APIs\n- Storage strategy\n- Scalability considerations\n- Trade-offs and alternatives\n\n需求：\n[在此描述需求]",
+      "categoryId": "cat-arch", "tags": ["系统设计", "架构"], "color": "#3b82f6",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 6
+    },
+    {
+      "id": "pm-api-design", "title": "API 设计", "content": "Help me design a RESTful API for:\n\n领域：[描述]\n\n请提供：\n1. 资源模型\n2. 端点列表（含请求/响应格式）\n3. 状态码设计\n4. 认证授权方案\n5. 错误处理规范",
+      "categoryId": "cat-arch", "tags": ["API", "设计"], "color": "#3b82f6",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 7
+    },
+    {
+      "id": "pm-debug-error", "title": "Bug 分析", "content": "I'm encountering the following error. Help me identify the root cause and propose a fix.\n\nError: [在此粘贴错误信息]\n\nCode context:\n```\n[在此粘贴相关代码]\n```",
+      "categoryId": "cat-debug", "tags": ["调试", "错误"], "color": "#f97316",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 8
+    },
+    {
+      "id": "pm-crash-analysis", "title": "崩溃分析", "content": "Analyze this crash dump / stack trace and help me identify:\n1. What caused the crash\n2. Which component/module is responsible\n3. Steps to reproduce hypothesis\n4. Fix recommendation\n\nStack trace:\n```\n[在此粘贴堆栈信息]\n```",
+      "categoryId": "cat-debug", "tags": ["调试", "崩溃"], "color": "#ef4444",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 9
+    },
+    {
+      "id": "pm-runtime", "title": "运行时性能分析", "content": "Profile this code and identify performance bottlenecks. Suggest specific optimizations with code examples.\n\n```\n[在此粘贴代码]\n```\n\n重点关注：\n- 时间复杂度优化\n- 内存使用\n- I/O 瓶颈\n- 缓存策略",
+      "categoryId": "cat-perf", "tags": ["性能", "运行时"], "color": "#22c55e",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 10
+    },
+    {
+      "id": "pm-bundle-opt", "title": "打包体积优化", "content": "Help me reduce the bundle size of my project. Analyze these areas:\n\n1. Tree-shaking opportunities\n2. Code splitting strategy\n3. Dependency audit\n4. Image/font optimization\n5. Webpack/Vite config tuning\n\nProject: [描述你的项目]",
+      "categoryId": "cat-perf", "tags": ["性能", "打包"], "color": "#eab308",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 11
+    },
+    {
+      "id": "pm-ut-gen", "title": "单元测试生成", "content": "Generate comprehensive unit tests for the following code. Include:\n- Happy path tests\n- Edge cases\n- Error handling\n- Mock external dependencies\n\n```\n[在此粘贴代码]\n```",
+      "categoryId": "cat-test", "tags": ["测试", "单元测试"], "color": "#06b6d4",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 12
+    },
+    {
+      "id": "pm-int-test", "title": "集成测试", "content": "Design and implement integration tests for the following service/API:\n\n```\n[在此粘贴代码或 API 定义]\n```\n\n需要覆盖：\n1. 正常流程\n2. 异常输入\n3. 依赖服务 mock\n4. 数据库状态验证",
+      "categoryId": "cat-test", "tags": ["测试", "集成测试"], "color": "#06b6d4",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 13
+    },
+    {
+      "id": "pm-e2e", "title": "E2E 测试", "content": "Write end-to-end tests for the following user flow:\n\n用户场景：[描述用户操作流程]\n\n请生成 Playwright/Cypress 测试代码，覆盖：\n1. 关键用户路径\n2. 表单交互\n3. 导航流程\n4. 错误状态",
+      "categoryId": "cat-test", "tags": ["测试", "E2E"], "color": "#22c55e",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 14
+    },
+    {
+      "id": "pm-learn-ts", "title": "TypeScript 深入学习", "content": "解释以下 TypeScript 概念，并给出实际代码示例：\n\n概念：[在此输入要学习的概念]\n\n请包含：\n1. 核心原理\n2. 实际使用场景\n3. 常见陷阱\n4. 最佳实践",
+      "categoryId": "cat-learn", "tags": ["学习", "TypeScript"], "color": "#eab308",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 15
+    },
+    {
+      "id": "pm-learn-react", "title": "React 深入", "content": "帮我深入理解 React 的以下概念：\n\n主题：[在此输入主题，如 useMemo、Suspense、Server Components 等]\n\n请提供：\n1. 实现原理\n2. 适用场景\n3. 与替代方案的对比\n4. 性能影响分析",
+      "categoryId": "cat-learn", "tags": ["学习", "React"], "color": "#06b6d4",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 16
+    },
+    {
+      "id": "pm-sql-opt", "title": "SQL 查询优化", "content": "Optimize the following SQL query. Analyze:\n- Table structure and indexes\n- Query execution plan\n- Bottlenecks\n- Optimization suggestions\n\n```sql\n[在此粘贴 SQL 查询]\n```\n\n表结构：\n```\n[在此粘贴表结构]\n```",
+      "categoryId": "cat-db", "tags": ["数据库", "SQL", "优化"], "color": "#3b82f6",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 17
+    },
+    {
+      "id": "pm-db-schema", "title": "数据库表设计", "content": "Design a database schema for the following requirements:\n\n需求：[在此描述]\n\n请提供：\n1. ER 图（文字描述）\n2. 建表 SQL\n3. 索引策略\n4. 关联关系说明",
+      "categoryId": "cat-db", "tags": ["数据库", "设计"], "color": "#22c55e",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 18
+    },
+    {
+      "id": "pm-git-commit", "title": "生成提交信息", "content": "Generate a conventional commit message for the following changes:\n\n```\n[在此粘贴 git diff 输出]\n```\n\n遵循 Conventional Commits 规范：\n- feat: 新功能\n- fix: 修复\n- refactor: 重构\n- test: 测试\n- docs: 文档\n- chore: 杂项",
+      "categoryId": "cat-git", "tags": ["Git", "提交"], "color": "#f97316",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 19
+    },
+    {
+      "id": "pm-git-rebase", "title": "Git 操作指南", "content": "I need help with the following Git operation:\n\n场景：[描述你要做的 Git 操作，如 rebase、cherry-pick、merge 冲突解决等]\n\n当前分支状态：\n- 当前分支：[分支名]\n- 目标分支：[分支名]\n- 未提交的更改：有/无\n\n请给出具体的命令步骤。",
+      "categoryId": "cat-git", "tags": ["Git", "操作"], "color": "#eab308",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 20
+    },
+    {
+      "id": "pm-api-docs", "title": "API 文档生成", "content": "Generate API documentation for the following endpoint(s):\n\n```\n[在此粘贴代码或路由定义]\n```\n\n格式：OpenAPI / Swagger 格式",
+      "categoryId": "cat-docs", "tags": ["文档", "API"], "color": "#ec4899",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 21
+    },
+    {
+      "id": "pm-readme", "title": "项目 README", "content": "Write a README.md for my project:\n\n项目名称：[名称]\n项目描述：[简短描述]\n主要功能：\n- [功能1]\n- [功能2]\n\n技术栈：[技术栈列表]\n\n请生成包含以下章节的 README：\n1. 项目介绍\n2. 快速开始\n3. 主要功能\n4. 技术栈\n5. 贡献指南",
+      "categoryId": "cat-docs", "tags": ["文档", "README"], "color": "#ec4899",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 22
+    },
+    {
+      "id": "pm-react-comp", "title": "React 组件开发", "content": "Create a React component with the following specifications:\n\n功能描述：[在此描述]\nProps：\n- [prop1]: type, description\n- [prop2]: type, description\n\n要求：\n- TypeScript\n- 支持无障碍\n- 错误处理\n- Loading 状态\n- 空状态处理",
+      "categoryId": "cat-frontend", "tags": ["前端", "React", "组件"], "color": "#06b6d4",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 23
+    },
+    {
+      "id": "pm-tailwind", "title": "Tailwind 样式", "content": "Help me implement the following UI design using Tailwind CSS:\n\n设计描述：[在此描述 UI 设计]\n\n需要：\n1. HTML 结构\n2. Tailwind 类名\n3. 响应式适配\n4. 暗色模式支持",
+      "categoryId": "cat-frontend", "tags": ["前端", "CSS", "Tailwind"], "color": "#06b6d4",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 24
+    },
+    {
+      "id": "pm-node-api", "title": "Node.js API 路由", "content": "Implement an API endpoint with the following spec:\n\n方法：[GET/POST/PUT/DELETE]\n路径：[路由路径]\n请求体：\n```\n[请求体格式]\n```\n响应：\n```\n[响应格式]\n```\n\n要求：\n- 输入验证\n- 错误处理\n- 日志记录\n- TypeScript",
+      "categoryId": "cat-backend", "tags": ["后端", "Node.js", "API"], "color": "#22c55e",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 25
+    },
+    {
+      "id": "pm-middleware", "title": "中间件设计", "content": "Design a middleware for the following purpose:\n\n用途：[在此描述]\n框架：[Express / Koa / Fastify / 自定义]\n\n请包含：\n1. 中间件实现代码\n2. 配置选项\n3. 使用示例\n4. 错误处理策略",
+      "categoryId": "cat-backend", "tags": ["后端", "中间件"], "color": "#22c55e",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 26
+    },
+    {
+      "id": "pm-refactor-clean", "title": "代码清理重构", "content": "Refactor the following code to improve readability and maintainability:\n\n```\n[在此粘贴代码]\n```\n\n关注点：\n1. 提取重复逻辑\n2. 简化复杂条件\n3. 有意义的命名\n4. 单一职责原则\n5. 移除死代码",
+      "categoryId": "cat-refactor", "tags": ["重构", "清理"], "color": "#eab308",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 27
+    },
+    {
+      "id": "pm-js2ts", "title": "JS 转 TypeScript", "content": "Convert this JavaScript code to TypeScript:\n\n```javascript\n[在此粘贴 JS 代码]\n```\n\n要求：\n1. 完整的类型定义\n2. 使用 strict 模式\n3. 泛型（如适用）\n4. 类型守卫（如适用）\n5. 保留原始逻辑不变",
+      "categoryId": "cat-refactor", "tags": ["重构", "TypeScript"], "color": "#eab308",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 28
+    },
+    {
+      "id": "pm-explain-code", "title": "代码解释", "content": "Explain the following code in detail:\n\n```\n[在此粘贴代码]\n```\n\n请解释：\n1. 这段代码的功能\n2. 关键算法/逻辑\n3. 输入输出\n4. 潜在问题\n5. 改进建议",
+      "categoryId": "cat-learn", "tags": ["学习", "解释"], "color": "#eab308",
+      "createdAt": "2025-01-01T00:00:00.000Z", "updatedAt": "2025-01-01T00:00:00.000Z", "usageCount": 0, "sortOrder": 29
+    }
+  ]
+}

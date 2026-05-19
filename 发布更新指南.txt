@@ -1,0 +1,39 @@
+PromptBox 发布更新指南
+========================
+
+1. 前置条件
+   - GitHub 仓库: milusvip/PromptBox
+   - 需要 classic token（在 https://github.com/settings/tokens 生成）
+     类型选 "Generate new token (classic)"
+     权限勾选 "repo"（全选）
+     有效期选 "No expiration"
+
+2. 首次发布 / 发布更新版本
+   - 先修改 package.json 里的 version（更新版本才需要）
+   - 打开终端，设置 token：
+     PowerShell: $env:GH_TOKEN="你的classic token"
+     CMD:        set GH_TOKEN=你的classic token
+   - 执行发布命令：
+     npx electron-builder --win --config --publish=always
+
+   执行后会自动：
+   - 构建安装包和便携版
+   - 在 GitHub 创建 Release
+   - 上传安装包 + latest.yml + blockmap
+
+3. 查看发布
+   打开 https://github.com/milusvip/PromptBox/releases
+
+4. 仅打包不发布
+   npm run build:installer
+   产物在 dist/ 目录下
+
+5. 常见问题
+   检查更新提示 "No published versions on GitHub"
+   -> GitHub 上还没有 Release，执行一次 --publish=always
+
+   403 Forbidden
+   -> token 类型不对，用 classic token 并勾选 repo 权限
+
+   token 过期
+   -> 去 GitHub 重新生成 classic token

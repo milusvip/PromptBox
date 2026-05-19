@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0f0f1a;
+  --color-glass: rgba(255, 255, 255, 0.06);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass-hover: rgba(255, 255, 255, 0.1);
+  --color-accent: #7c3aed;
+  --color-accent-light: #8b5cf6;
+  --color-accent-hover: rgba(124, 58, 237, 0.15);
+  --color-accent-05: rgba(124, 58, 237, 0.05);
+  --color-accent-10: rgba(124, 58, 237, 0.1);
+  --color-accent-20: rgba(124, 58, 237, 0.2);
+  --color-accent-30: rgba(124, 58, 237, 0.3);
+  --color-accent-80: rgba(124, 58, 237, 0.8);
+  --color-text: #e2e8f0;
+  --color-text-secondary: #e2e8f0;
+  --color-danger: #ef4444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI Variable', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  border-radius: 12px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Glass morphism base */
+.glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-glass-border);
+}
+
+.glass-hover {
+  transition: all 0.2s ease;
+}
+
+.glass-hover:hover {
+  background: var(--color-glass-hover);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Drag region */
+.drag-region {
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* Text truncation */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Spin animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Scrollbar always visible with track spacing */
+.scrollbar-gutter {
+  scrollbar-gutter: stable;
+}
+
+.scrollbar-gutter::-webkit-scrollbar {
+  width: 5px;
+  background: transparent;
+}
+
+.scrollbar-gutter::-webkit-scrollbar-track {
+  background: transparent;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.scrollbar-gutter::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 3px;
+  min-height: 30px;
+}
+
+.scrollbar-gutter::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Scale in animation */
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.15s ease-out;
+}
+
+/* Drag and drop */
+.drag-over {
+  border-color: var(--color-accent) !important;
+}
+
+.dragging {
+  opacity: 0.5;
+}
+
+/* Selection colors */
+::selection {
+  background: rgba(124, 58, 237, 0.3);
+  color: #fff;
+}
+
+/* ── Theme: 亮色 ── */
+html.theme-light {
+  --color-bg: #f1f5f9;
+  --color-glass: rgba(255, 255, 255, 0.85);
+  --color-glass-border: rgba(0, 0, 0, 0.12);
+  --color-glass-hover: rgba(0, 0, 0, 0.05);
+  --color-accent: #3b82f6;
+  --color-accent-light: #60a5fa;
+  --color-accent-hover: rgba(59, 130, 246, 0.15);
+  --color-accent-05: rgba(59, 130, 246, 0.05);
+  --color-accent-10: rgba(59, 130, 246, 0.1);
+  --color-accent-20: rgba(59, 130, 246, 0.2);
+  --color-accent-30: rgba(59, 130, 246, 0.3);
+  --color-accent-80: rgba(59, 130, 246, 0.8);
+  --color-text: #0f172a;
+  --color-text-secondary: #0f172a;
+}
+
+/* ── Theme: 紫色 ── */
+html.theme-purple {
+  --color-bg: #1a0a2e;
+  --color-accent: #a855f7;
+  --color-accent-light: #c084fc;
+  --color-accent-hover: rgba(168, 85, 247, 0.15);
+  --color-accent-05: rgba(168, 85, 247, 0.05);
+  --color-accent-10: rgba(168, 85, 247, 0.1);
+  --color-accent-20: rgba(168, 85, 247, 0.2);
+  --color-accent-30: rgba(168, 85, 247, 0.3);
+  --color-accent-80: rgba(168, 85, 247, 0.8);
+}
+
+/* ── Theme: 海洋 ── */
+html.theme-ocean {
+  --color-bg: #0a1628;
+  --color-accent: #06b6d4;
+  --color-accent-light: #22d3ee;
+  --color-accent-hover: rgba(6, 182, 212, 0.15);
+  --color-accent-05: rgba(6, 182, 212, 0.05);
+  --color-accent-10: rgba(6, 182, 212, 0.1);
+  --color-accent-20: rgba(6, 182, 212, 0.2);
+  --color-accent-30: rgba(6, 182, 212, 0.3);
+  --color-accent-80: rgba(6, 182, 212, 0.8);
+}
+
+/* ── Theme: 森林 ── */
+html.theme-forest {
+  --color-bg: #0a1a0f;
+  --color-accent: #22c55e;
+  --color-accent-light: #4ade80;
+  --color-accent-hover: rgba(34, 197, 94, 0.15);
+  --color-accent-05: rgba(34, 197, 94, 0.05);
+  --color-accent-10: rgba(34, 197, 94, 0.1);
+  --color-accent-20: rgba(34, 197, 94, 0.2);
+  --color-accent-30: rgba(34, 197, 94, 0.3);
+  --color-accent-80: rgba(34, 197, 94, 0.8);
+}
+
+/* ── Theme: 日落 ── */
+html.theme-sunset {
+  --color-bg: #1a0f0a;
+  --color-accent: #f97316;
+  --color-accent-light: #fb923c;
+  --color-accent-hover: rgba(249, 115, 22, 0.15);
+  --color-accent-05: rgba(249, 115, 22, 0.05);
+  --color-accent-10: rgba(249, 115, 22, 0.1);
+  --color-accent-20: rgba(249, 115, 22, 0.2);
+  --color-accent-30: rgba(249, 115, 22, 0.3);
+  --color-accent-80: rgba(249, 115, 22, 0.8);
+}
+
+/* ── Theme: 玫瑰 ── */
+html.theme-rose {
+  --color-bg: #1a0a14;
+  --color-accent: #ec4899;
+  --color-accent-light: #f472b6;
+  --color-accent-hover: rgba(236, 72, 153, 0.15);
+  --color-accent-05: rgba(236, 72, 153, 0.05);
+  --color-accent-10: rgba(236, 72, 153, 0.1);
+  --color-accent-20: rgba(236, 72, 153, 0.2);
+  --color-accent-30: rgba(236, 72, 153, 0.3);
+  --color-accent-80: rgba(236, 72, 153, 0.8);
+}
+
+/* ── Theme: 午夜 ── */
+html.theme-midnight {
+  --color-bg: #050a1a;
+  --color-accent: #3b82f6;
+  --color-accent-light: #60a5fa;
+  --color-accent-hover: rgba(59, 130, 246, 0.15);
+  --color-accent-05: rgba(59, 130, 246, 0.05);
+  --color-accent-10: rgba(59, 130, 246, 0.1);
+  --color-accent-20: rgba(59, 130, 246, 0.2);
+  --color-accent-30: rgba(59, 130, 246, 0.3);
+  --color-accent-80: rgba(59, 130, 246, 0.8);
+}
+
+/* ── Theme: 赛博 ── */
+html.theme-cyber {
+  --color-bg: #0a0618;
+  --color-accent: #22d3ee;
+  --color-accent-light: #67e8f9;
+  --color-accent-hover: rgba(34, 211, 238, 0.15);
+  --color-accent-05: rgba(34, 211, 238, 0.05);
+  --color-accent-10: rgba(34, 211, 238, 0.1);
+  --color-accent-20: rgba(34, 211, 238, 0.2);
+  --color-accent-30: rgba(34, 211, 238, 0.3);
+  --color-accent-80: rgba(34, 211, 238, 0.8);
+}
+
+/* ── Theme: 摩卡 ── */
+html.theme-mocha {
+  --color-bg: #12100e;
+  --color-accent: #d4a574;
+  --color-accent-light: #e2b88d;
+  --color-accent-hover: rgba(212, 165, 116, 0.15);
+  --color-accent-05: rgba(212, 165, 116, 0.05);
+  --color-accent-10: rgba(212, 165, 116, 0.1);
+  --color-accent-20: rgba(212, 165, 116, 0.2);
+  --color-accent-30: rgba(212, 165, 116, 0.3);
+  --color-accent-80: rgba(212, 165, 116, 0.8);
+}
